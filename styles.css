@@ -1,0 +1,30 @@
+/* 隐藏播放/暂停按钮 */#video::-webkit-media-controls-play-button {
+  display: none;
+}
+/* 隐藏音量控制 */#video::-webkit-media-controls-volume-slider {
+  display: none;
+}
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 保持16:9的宽高比 */
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .fullscreen-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ccc;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }>

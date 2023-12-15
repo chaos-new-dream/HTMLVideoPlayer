@@ -1,0 +1,83 @@
+<!DOCTYPE html><html><head>
+
+  <title>点击屏幕播放视频</title>
+  
+<meta name="viewport" content="width=320, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+
+ /* Style the fullscreen button */
+#fullscreen-button {
+ position: absolute;
+ top: 10px;
+ left: 10px;
+ }
+#turnscreen-button {
+ position: absolute;
+ top: 10px;
+ right: 10px;
+ }
+#thediv {
+position: relative;
+width: 320px;
+height: 180px;
+background-color: black;
+}
+
+#myVideo {
+  position: absolute; /* 子元素使用绝对定位 */
+  top: 50%; /* 子元素顶部位于容器垂直中心 */
+  left: 50%; /* 子元素左侧位于容器水平中心 */
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+  </style>
+</head><body>
+
+<div id="thediv" class="video-container">
+  <video id="myVideo" width=320 height=180>
+    <source src="myVideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+<button id="fullscreen-button">全屏</button>
+  <button id="turnscreen-button">旋转</button>
+</div>
+
+  
+  
+  <script>
+    // 获取视频元素
+    var myVideo = document.getElementById("myVideo");
+    var thediv=document.getElementById("thediv");
+    // 添加点击事件监听器
+    myVideo.addEventListener("dblclick", function() {
+
+      if (myVideo.paused) {
+        myVideo.play();
+      } else {
+        myVideo.pause();
+      }
+    });
+    
+    document.getElementById("fullscreen-button").addEventListener("click", function() {
+ if (thediv.requestFullscreen) {
+ thediv.requestFullscreen();
+ } 
+ else if (thediv.mozRequestFullScreen) {
+  // Firefox
+ thediv.mozRequestFullScreen();
+ } 
+ else if (thediv.webkitRequestFullscreen) {
+  // Chrome, Safari and Opera
+ thediv.webkitRequestFullscreen();
+ } 
+ else if (thediv.msRequestFullscreen) { 
+ // IE/Edge
+ thediv.msRequestFullscreen();
+ };myVideo.play();
+    });
+    ;
+myVideo.style.width=screen.height+"px";
+myVideo.style.height=screen.width+"px";
+  </script>
+  
+</body></html>
