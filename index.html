@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>点击视频</title>
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <style>
+    /* video::-webkit-media-controls-fullscreen-button {
+      display: none;
+    } */
+
+    /* //播放按钮 */
+    /* video::-webkit-media-controls-play-button {
+      display: none;
+    } */
+
+    /* //进度条 */
+    /* video::-webkit-media-controls-timeline {
+      display: none;
+    } */
+
+    /* //观看的当前时间 */
+    /* video::-webkit-media-controls-current-time-display {
+      display: none;
+    } */
+
+    /* //剩余时间 */
+    /* video::-webkit-media-controls-time-remaining-display {
+      display: none;
+    } */
+
+    /* //音量按钮 */
+    /* video::-webkit-media-controls-mute-button {
+      display: none;
+    } */
+
+    /* video::-webkit-media-controls-toggle-closed-captions-button {
+      display: none;
+    } */
+
+    /* //音量的控制条 */
+    /* video::-webkit-media-controls-volume-slider {
+      display: none;
+    } */
+
+    /* //所有控件 */
+    /* video::-webkit-media-controls-enclosure {
+      display: none;
+    } */
+
+
+
+    #fullscreen-button {
+      z-index: 999;
+      top: 10px;
+      left: 10px;
+    }
+
+    #turnscreen-button {
+      z-index: 999;
+      top: 200px;
+      left: 10px;
+    }
+
+    /* 主要的画布 */
+    /* #mainDiv {
+      position: absolute;
+      z-index: 10;
+      background-color: rgb(255, 0, 0);
+      width: 100;
+      width: 100;
+    } */
+
+    /* 视频 */
+    /* #myVideo {
+      position: absolute;
+      z-index: 10;
+      width: 10;
+      width: 10;
+    } */
+
+    /* 显示暂停的图标 */
+    /* #pausePic {
+      z-index: 999;
+      left: 50%;
+      top: 50%;
+    } */
+
+    /* #pauseDiv {
+      z-index: 800;
+      left: 50%;
+      top: 50%;
+    } */
+
+    /* 调试输出的文本 */
+    /* #debugText {
+      z-index: 999;
+      top: 200px;
+      color: green;
+    } */
+  </style>
+</head>
+
+<body>
+  <div id="idVideoDiv" class="video-container">
+    <video id="myVideo">
+      <source src="myVideo.mp4" type="video/mp4" controls>
+      Your browser does not support the video tag.
+    </video>
+    <div id="pauseDiv" class="video-overlay">
+      <img id="pausePic" src="PNGs/pause.png" alt="暂停图标">
+    </div>
+  </div>
+  <button id="fullscreen-button">全屏</button>
+  <button id="turnscreen-button">旋转</button>
+  <h1 id="debugText">debug</h1>
+  <script src="Codes/mainCode.js"></script>
+</body>
+
+</html>
